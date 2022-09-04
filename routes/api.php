@@ -10,6 +10,8 @@ use App\Http\Controllers\DepenseController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ChildcategorieController;
 use App\Http\Controllers\CataloqueController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +116,24 @@ Route::get('lastpost', [CataloqueController::class, 'last']);
 Route::post('deletpost/{id_catalogue}', [CataloqueController::class, 'delet']);
 Route::post('insertcatalogue', [CataloqueController::class, 'insertcat']);
 
+
+//type stock api
+Route::get('alltypes',[TypeController::class, 'all']);
+
+Route::post('isertype',[TypeController::class, 'insert']);
+
+
+//type stock api
+
+Route::get('papier',[StockController::class, 'papier']);
+Route::get('souple',[StockController::class, 'souple']);
+Route::get('rigide',[StockController::class, 'rigide']);
+Route::get('unite',[StockController::class, 'unite']);
+Route::get('finStock',[StockController::class, 'finStock']);
+
+Route::post('isertStock',[StockController::class, 'insert']);
+Route::post('stocktype',[StockController::class, 'type']);
+Route::post('updateContite/{id_stock}',[StockController::class, 'update']);
 
 
 
