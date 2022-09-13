@@ -12,6 +12,7 @@ use App\Http\Controllers\ChildcategorieController;
 use App\Http\Controllers\CataloqueController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -135,6 +136,10 @@ Route::post('isertStock',[StockController::class, 'insert']);
 Route::post('stocktype',[StockController::class, 'type']);
 Route::post('updateContite/{id_stock}',[StockController::class, 'update']);
 
+//type location api
+
+Route::post('insertloc',[LocationController::class, 'insert']);
+Route::post('updatelic/{id_location}',[LocationController::class, 'update']);
 
 
 
