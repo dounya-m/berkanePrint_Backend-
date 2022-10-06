@@ -26,4 +26,11 @@ class LocationController extends Controller
         $update->update($request->all());
         return response()->json($update);
     }
+
+    public function last()
+    {
+
+        $location = Location::orderBy('created_at', 'desc')->take(1)->get();
+        return response()->json($location);
+    }
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\CataloqueController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\FactureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,7 +141,15 @@ Route::post('updateContite/{id_stock}',[StockController::class, 'update']);
 
 Route::post('insertloc',[LocationController::class, 'insert']);
 Route::post('updatelic/{id_location}',[LocationController::class, 'update']);
+Route::get('lastmonth',[LocationController::class, 'last']);
 
+//type location api
+
+Route::post('insertfacture',[FactureController::class, 'insert']);
+
+
+Route::get('lastfac',[FactureController::class, 'last']);
+Route::get('sumfac',[FactureController::class, 'sum']);
 
 
 Route::group(['prefix' => 'v1'], function () { Route::get('sendmail', 'MailController@sendmail'); });

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Facture extends Model
 {
     use HasFactory;
+    protected $table = 'facture';
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'tyoe',
+        'mois',
+        'prix',
+    ];
 }
